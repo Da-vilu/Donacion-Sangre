@@ -1,11 +1,14 @@
 package Vista;
 
+import java.net.URL;
 import java.sql.SQLException;
-
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import Controlador.Main;
 
-public class MainMenuControler {
+public class MainMenuControler implements Initializable{
 	
 	@FXML
 	private Button btnDonantes;
@@ -15,6 +18,23 @@ public class MainMenuControler {
 
 	@FXML
 	private Button btnInformes;
+
+	private  Main ProgramaPrincipal;
+	 
+	 
+    public void setProgramaPrincipal(Main ProgramaPrincipal) {
+        this.ProgramaPrincipal = ProgramaPrincipal;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+
+  
+	
+	
+	
 	
 	
 	public void Donantes() throws SQLException{
