@@ -2,6 +2,7 @@ package Controlador;
 
 import java.io.IOException;
 
+import Vista.DonantesControladora;
 import Vista.MainMenuControler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stagePrincipal) throws Exception {
         Main.stagePrincipal = stagePrincipal;
-        mostrarVentanaPrincipal();
+        mostrarMainMenu();
 
     }
 
@@ -30,12 +31,12 @@ public class Main extends Application {
     /*
      * cargamos la ventana principal
      */
-    public void mostrarVentanaPrincipal() {
+    public void mostrarMainMenu() {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/MainMenu.fxml"));
             rootPane=(AnchorPane) loader.load();
             Scene scene = new Scene(rootPane);
-            stagePrincipal.setTitle("Ventana Principal");
+            stagePrincipal.setTitle("Menú Principal");
             stagePrincipal.setScene(scene);
             /*
              * Añadidos las llamadas del main al Controlador y del controlador al main ***/
@@ -48,4 +49,28 @@ public class Main extends Application {
             //tratar la excepción.
         }
    }
+    
+    public void mostrarDonantes() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/IUDonantes.fxml"));
+            AnchorPane donan = (AnchorPane) loader.load();
+            /* Creamos la segunda ventana como otro stage */
+            Stage ventana = new Stage();
+            ventana.setTitle("Ventana Donantes");
+            /* Le decimos a la ventana quién es la ventana original */
+            ventana.initOwner(stagePrincipal);
+            Scene scene = new Scene(donan);
+            ventana.setScene(scene);
+
+            DonantesControladora controller2 = loader.getController();
+            controller2.setStagePrincipal(ventana);
+            controller2.setProgramaPrincipal(this);
+
+            ventana.show();
+
+        } catch (Exception e) {
+            //tratar la excepción
+        }
+    }
+
 }

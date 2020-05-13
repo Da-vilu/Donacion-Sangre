@@ -19,9 +19,11 @@ public class MainMenuControler implements Initializable{
 	@FXML
 	private Button btnInformes;
 
+	
 	private  Main ProgramaPrincipal;
 	 
 	 
+
     public void setProgramaPrincipal(Main ProgramaPrincipal) {
         this.ProgramaPrincipal = ProgramaPrincipal;
     }
@@ -31,18 +33,12 @@ public class MainMenuControler implements Initializable{
         // TODO
     }
 
-  
+    
+    @FXML
+    private void Donantes() {
+       	this.ProgramaPrincipal.mostrarDonantes();
+    }
 	
-	
-	
-	
-	
-	public void Donantes() throws SQLException{
-		
-		
-
-	}
-
 
 
 	

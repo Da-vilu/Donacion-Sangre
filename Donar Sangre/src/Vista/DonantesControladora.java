@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import Modelo.BBDDdonantes;
 import Modelo.Donantes;
+import Controlador.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -102,7 +103,9 @@ public class DonantesControladora {
 	@FXML
 	private TableColumn<Donantes,String> Aptitud;
 	
+	private  Main ProgramaPrincipal;
 	
+	private Stage ventana;
 	
 	BBDDdonantes con;
 
@@ -110,7 +113,14 @@ public class DonantesControladora {
 
 	
 
-	
+	public void setProgramaPrincipal(Main ProgramaPrincipal) {
+        this.ProgramaPrincipal = ProgramaPrincipal;
+    }
+
+	public void setStagePrincipal(Stage ventana) {
+		// TODO Auto-generated method stub
+		this.ventana = ventana;
+	}
 	
 	public void initialize() throws SQLException{
 		
