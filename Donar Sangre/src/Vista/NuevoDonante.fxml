@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.NuevoDonante">
+   <children>
+      <TextField fx:id="txtNdonante" layoutX="274.0" layoutY="83.0" />
+      <Label layoutX="299.0" layoutY="22.0" text="NUEVO DONANTE" />
+      <Label layoutX="312.0" layoutY="59.0" text="Num. Donante" />
+      <Label layoutX="51.0" layoutY="147.0" text="Nombre" />
+      <Label layoutX="51.0" layoutY="186.0" text="Apellido 1" />
+      <TextField fx:id="txtNonmbre" layoutX="175.0" layoutY="143.0" />
+      <TextField fx:id="txtApellido1" layoutX="175.0" layoutY="182.0" />
+      <Label layoutX="51.0" layoutY="225.0" text="Apellido 2" />
+      <TextField fx:id="txtApellido2" layoutX="175.0" layoutY="221.0" />
+      <Label layoutX="51.0" layoutY="262.0" text="Foto" />
+      <Button fx:id="btnFoto" layoutX="204.0" layoutY="258.0" mnemonicParsing="false" text="Escanear Foto" />
+      <Label layoutX="52.0" layoutY="301.0" text="DNI" />
+      <TextField fx:id="txtDNI" layoutX="175.0" layoutY="297.0" />
+      <Label layoutX="43.0" layoutY="336.0" text="Fecha Nacimiento" />
+      <TextField fx:id="txtFecha_nacimiento" layoutX="175.0" layoutY="332.0" />
+      <Label layoutX="46.0" layoutY="372.0" text="Teléfono" />
+      <TextField fx:id="txtTlf" layoutX="175.0" layoutY="368.0" />
+      <Label layoutX="48.0" layoutY="406.0" text="Móvil" />
+      <TextField fx:id="txtTlfMovil" layoutX="175.0" layoutY="402.0" />
+      <Label layoutX="48.0" layoutY="444.0" text="Email" />
+      <TextField fx:id="txtEmail" layoutX="175.0" layoutY="440.0" />
+      <Label layoutX="402.0" layoutY="147.0" text="Sexo" />
+      <RadioButton fx:id="hombre" layoutX="523.0" layoutY="147.0" mnemonicParsing="false" text="H" toggleGroup="$sexo" />
+      <RadioButton fx:id="mujer" layoutX="561.0" layoutY="147.0" mnemonicParsing="false" text="M" toggleGroup="$sexo"/>
+      <Label layoutX="395.0" layoutY="183.0" text="Tipo Sangre" />
+      <TextField fx:id="txtTipoSangre" layoutX="487.0" layoutY="179.0" />
+      <Label layoutX="397.0" layoutY="224.0" text="Direccion" />
+      <TextField fx:id="txtDireccion" layoutX="487.0" layoutY="220.0" />
+      <Button fx:id="btnAceptar" layoutX="224.0" layoutY="552.0" mnemonicParsing="false" text="Aceptar" />
+      <Button fx:id="btnBorrar" layoutX="404.0" layoutY="552.0" mnemonicParsing="false" text="Borrar" />
+      <Label layoutX="397.0" layoutY="263.0" text="Tipo Residencia" />
+      <TextField fx:id="txtTipoResidencia" layoutX="487.0" layoutY="259.0" />
+      <Label layoutX="397.0" layoutY="302.0" text="Población" />
+      <Label layoutX="397.0" layoutY="341.0" text="Provincia" />
+      <Label layoutX="400.0" layoutY="378.0" text="CP" />
+      <Label layoutX="400.0" layoutY="417.0" text="País Natal" />
+      <Label layoutX="400.0" layoutY="452.0" text="Aptitud" />
+      <TextField fx:id="txtPoblacion" layoutX="487.0" layoutY="298.0" />
+      <TextField fx:id="txtProvincia" layoutX="487.0" layoutY="337.0" />
+      <TextField fx:id="txtCP" layoutX="487.0" layoutY="374.0" />
+      <TextField fx:id="txtPaisNatal" layoutX="487.0" layoutY="413.0" />
+      <RadioButton fx:id="Si" layoutX="522.0" layoutY="452.0" mnemonicParsing="false" text="Si"toggleGroup="$aptitud"/>
+      <RadioButton fx:id="No" layoutX="562.0" layoutY="452.0" mnemonicParsing="false" text="No"toggleGroup="$aptitud" />
+   </children>
+</AnchorPane>
