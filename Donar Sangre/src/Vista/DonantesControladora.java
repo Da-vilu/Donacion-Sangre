@@ -166,7 +166,10 @@ public class DonantesControladora {
 		
 				public void NuevoDonante() throws SQLException {
 		
-					//Hay que realizar la UI de las donaciones para realizar este metodo
+					this.ProgramaPrincipal.pantallaNuevoDonante();
+					
+					datosseleccion = con.ConsultaDonantes();
+					TablaDonantes.setItems(datosseleccion);
 		
 			}
 	
@@ -223,7 +226,8 @@ public class DonantesControladora {
 				
 				public void Volver() {
 					
-			
+					
+					this.ventana.close();
 					
 			}
 				

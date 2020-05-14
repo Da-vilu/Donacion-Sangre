@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -10,14 +9,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Conexion_Donantes.DonantesControladora">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="431.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1425.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.DonantesControladora">
+   <children>
+      <SplitPane dividerPositions="0.6658291457286433" orientation="VERTICAL" prefHeight="400.0" prefWidth="1425.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="712.0" prefWidth="1416.0">
          <children>
-            <TableView fx:id="TablaDonantes" layoutX="-6.0" layoutY="-4.0" onSort="#initialize" prefHeight="380.0" prefWidth="182.0">
-              <columns>
-                <TableColumn fx:id="Ndonante" prefWidth="75.0" text="N_Donante" />
-                <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
+            <TableView fx:id="TablaDonantes" layoutX="-10.0" layoutY="249.0" onSort="#initialize" prefHeight="463.0" prefWidth="1432.0">
+               <columns>
+                  <TableColumn fx:id="Ndonante" prefWidth="75.0" text="N_Donante" />
+                  <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
                   <TableColumn fx:id="Apellido_1" prefWidth="75.0" text="Apellido_1" />
                   <TableColumn fx:id="Apellido_2" prefWidth="75.0" text="Apellido_2" />
                   <TableColumn fx:id="Foto" prefWidth="75.0" text="Foto" />
@@ -26,33 +31,33 @@
                   <TableColumn fx:id="TLF" prefWidth="75.0" text="TLF" />
                   <TableColumn fx:id="TLF_mov" prefWidth="75.0" text="TLF Móvil" />
                   <TableColumn fx:id="Email" prefWidth="75.0" text="Email" />
-                  <TableColumn fx:id="Sexo" prefWidth="75.0" text="Sexo" />
-                  <TableColumn fx:id="Tipo_sanguineo" prefWidth="75.0" text="Tipo Sangre" />
-                  <TableColumn fx:id="Direccion" prefWidth="75.0" text="Dirección" />
+                  <TableColumn fx:id="Sexo" prefWidth="46.0" text="Sexo" />
+                  <TableColumn fx:id="Tipo_sanguineo" prefWidth="78.0" text="Tipo Sangre" />
+                  <TableColumn fx:id="Direccion" prefWidth="101.0" text="Dirección" />
                   <TableColumn fx:id="T_residencia" prefWidth="75.0" text="Tipo Residencia" />
                   <TableColumn fx:id="Poblacion" prefWidth="75.0" text="Poblacion" />
-                  <TableColumn fx:id="Provincia" prefWidth="75.0" text="Provincia" />
-                  <TableColumn fx:id="CP" prefWidth="75.0" text="CP" />
-                  <TableColumn fx:id="Pais_nacimiento" prefWidth="75.0" text="País Nacimiento" />
-                  <TableColumn fx:id="Aptitud" prefWidth="75.0" text="Aptitud" />
-              </columns>
+                  <TableColumn fx:id="Provincia" prefWidth="109.0" text="Provincia" />
+                  <TableColumn fx:id="CP" prefWidth="35.0" text="CP" />
+                  <TableColumn fx:id="Pais_nacimiento" prefWidth="99.0" text="País Nacimiento" />
+                  <TableColumn fx:id="Aptitud" prefWidth="57.0" text="Aptitud" />
+               </columns>
             </TableView>
-            <ScrollBar fx:id="scrl_donantes" layoutY="378.0" onDragDetected="#mover" prefHeight="20.0" prefWidth="175.0" />
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-1.0" minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="1425.0">
          <children>
-            <Label layoutX="145.0" layoutY="14.0" prefHeight="56.0" prefWidth="128.0" text="DONANTES">
+            <Label layoutX="649.0" layoutY="14.0" prefHeight="56.0" prefWidth="128.0" text="DONANTES">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="111.0" layoutY="91.0" text="Buscar" />
-            <TextField fx:id="txtBuscar" layoutX="177.0" layoutY="87.0" onAction="#BuscarDonante" />
-            <Button fx:id="btnNuevaDonacion" layoutX="148.0" layoutY="153.0" mnemonicParsing="false" onAction="#NuevoDonante" prefHeight="25.0" prefWidth="121.0" text="Nuevo Donante" />
-            <Button fx:id="btnActualizarDonacion" layoutX="148.0" layoutY="199.0" mnemonicParsing="false" onAction="#ActualizarDonante" text="Actualizar Donante" />
-            <Button fx:id="btnEliminarDonacion" layoutX="148.0" layoutY="240.0" mnemonicParsing="false" onAction="#EliminarDonante" prefHeight="25.0" prefWidth="121.0" text="Eliminar Donante" />
-            <Button fx:id="MostrarDonacion" layoutX="148.0" layoutY="311.0" mnemonicParsing="false" onAction="#MostrarDonante" prefHeight="25.0" prefWidth="121.0" text="Mostrar Donante" />
-            <Button fx:id="btnVolver" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#Volver" text="&lt;-" />
-         </children></AnchorPane>
-  </items>
-</SplitPane>
+            <Label layoutX="583.0" layoutY="80.0" text="Buscar" />
+            <TextField fx:id="txtBuscar" layoutX="638.0" layoutY="76.0" onAction="#BuscarDonante" />
+            <Button fx:id="btnNuevaDonacion" layoutX="652.0" layoutY="112.0" mnemonicParsing="false" onAction="#NuevoDonante" prefHeight="25.0" prefWidth="121.0" text="Nuevo Donante" />
+            <Button fx:id="btnActualizarDonacion" layoutX="654.0" layoutY="150.0" mnemonicParsing="false" onAction="#ActualizarDonante" text="Actualizar Donante" />
+            <Button fx:id="btnEliminarDonacion" layoutX="653.0" layoutY="211.0" mnemonicParsing="false" onAction="#EliminarDonante" prefHeight="25.0" prefWidth="121.0" text="Eliminar Donante" />
+            <Button fx:id="btnVolver" layoutX="586.0" layoutY="211.0" mnemonicParsing="false" onAction="#Volver" text="&lt;-" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

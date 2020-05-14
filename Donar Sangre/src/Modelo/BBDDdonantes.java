@@ -72,7 +72,7 @@ import javafx.scene.control.Alert.AlertType;
 		
 		
 		public void NuevoDonante(String ndonante, String nombre, String apellido_1, String apellido_2, String foto,
-				String dNI_Pasaporte, String fecha_naci, int tLF, int tLF_mov, String email, String sexo,
+				String dNI_Pasaporte, String fecha_naci, String tLF, String movil, String email, String sexo,
 				String tipo_sanguineo, String direccion, String t_residencia, String poblacion, String provinvia,
 				String cP, String pais_naci, String aptitud) throws SQLException{
 
@@ -80,28 +80,27 @@ import javafx.scene.control.Alert.AlertType;
 			Statement stm = conexion.createStatement();
 
 			// Preparo la sentencia SQL CrearTablaPersonas
-			String insertsql = "INSERT INTO "+usr+".DONANTES VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String insertsql = "INSERT INTO "+usr+".DONANTES VALUES (?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			PreparedStatement pstmt = conexion.prepareStatement(insertsql);
 			pstmt.setString(1, ndonante);
 			pstmt.setString(2, nombre);
 			pstmt.setString(3, apellido_1);
 			pstmt.setString(4, apellido_2);
-			pstmt.setString(5, foto);
-			pstmt.setString(6, dNI_Pasaporte);
-			pstmt.setString(7, fecha_naci);
-			pstmt.setLong(8, tLF);
-			pstmt.setLong(9, tLF_mov);
-			pstmt.setString(10, email);
-			pstmt.setString(11, sexo);
-			pstmt.setString(12, tipo_sanguineo);
-			pstmt.setString(13, direccion);
-			pstmt.setString(14, t_residencia);
-			pstmt.setString(15, poblacion);
-			pstmt.setString(16, provinvia);
-			pstmt.setString(17, cP);
-			pstmt.setString(18, pais_naci);
-			pstmt.setString(19, aptitud);
+			pstmt.setString(5, dNI_Pasaporte);
+			pstmt.setString(6, fecha_naci);
+			pstmt.setString(7, tLF);
+			pstmt.setString(8, movil);
+			pstmt.setString(9, email);
+			pstmt.setString(10, sexo);
+			pstmt.setString(11, tipo_sanguineo);
+			pstmt.setString(12, direccion);
+			pstmt.setString(13, t_residencia);
+			pstmt.setString(14, poblacion);
+			pstmt.setString(15, provinvia);
+			pstmt.setString(16, cP);
+			pstmt.setString(17, pais_naci);
+			pstmt.setString(18, aptitud);
 			
 			//ejecuto la sentencia
 			try{
@@ -189,7 +188,7 @@ import javafx.scene.control.Alert.AlertType;
 			Statement stm = conexion.createStatement();
 
 			// Preparo la sentencia SQL CrearTablaPersonas
-			String insertsql = "UPDATE "+usr+".DONANTES SET NOMBRE=?, APELLIDO_1=?, APELLIDO_2=?, FOTO=?, DNI_pasaporte=?, FECHA_NACI=?, "
+			String insertsql = "UPDATE "+usr+".DONANTES SET NOMBRE=?, APELLIDO_1=?, APELLIDO_2=?, DNI_pasaporte=?, FECHA_NACI=?, "
 					+ "TLF=?, TLF_mov=?, EMAIL=?,SEXO=?, TIPO_SANGUINEO=?, DIRECCION=?, T_residencia=?, "
 					+ "POBLACION=?, PROVINVIA=?, CP=?, Pais_naci=?, Aptitud=? WHERE ndonante=?;";
 			
@@ -199,21 +198,20 @@ import javafx.scene.control.Alert.AlertType;
 			pstmt.setString(2, nombre);
 			pstmt.setString(3, apellido_1);
 			pstmt.setString(4, apellido_2);
-			pstmt.setString(5, foto);
-			pstmt.setString(6, dNI_Pasaporte);
-			pstmt.setString(7, fecha_naci);
-			pstmt.setLong(8, tLF);
-			pstmt.setLong(9, tLF_mov);
-			pstmt.setString(10, email);
-			pstmt.setString(11, sexo);
-			pstmt.setString(12, tipo_sanguineo);
-			pstmt.setString(13, direccion);
-			pstmt.setString(14, t_residencia);
-			pstmt.setString(15, poblacion);
-			pstmt.setString(16, provinvia);
-			pstmt.setString(17, cP);
-			pstmt.setString(18, pais_naci);
-			pstmt.setString(19, aptitud);
+			pstmt.setString(5, dNI_Pasaporte);
+			pstmt.setString(6, fecha_naci);
+			pstmt.setLong(7, tLF);
+			pstmt.setLong(8, tLF_mov);
+			pstmt.setString(9, email);
+			pstmt.setString(10, sexo);
+			pstmt.setString(11, tipo_sanguineo);
+			pstmt.setString(12, direccion);
+			pstmt.setString(13, t_residencia);
+			pstmt.setString(14, poblacion);
+			pstmt.setString(15, provinvia);
+			pstmt.setString(16, cP);
+			pstmt.setString(17, pais_naci);
+			pstmt.setString(18, aptitud);
 			
 			//ejecuto la sentencia
 			try{
