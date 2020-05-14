@@ -2,6 +2,7 @@ package Controlador;
 
 import java.io.IOException;
 
+import Vista.ActualizarDonante;
 import Vista.DonantesControladora;
 import Vista.MainMenuControler;
 import Vista.NuevoDonante;
@@ -88,6 +89,31 @@ public class Main extends Application {
             ventana.setScene(scene);
 
             NuevoDonante controller2 = loader.getController();
+            controller2.setStagePrincipal(ventana);
+            controller2.setProgramaPrincipal(this);
+
+            ventana.show();
+
+        } catch (Exception e) {
+            //tratar la excepción
+        	System.out.println(e);
+        }
+    }
+    
+    
+    public void pantallaActualizarDonante() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("../Vista/ActualizarDonante.fxml"));
+            AnchorPane donan = (AnchorPane) loader.load();
+            /* Creamos la segunda ventana como otro stage */
+            Stage ventana = new Stage();
+            ventana.setTitle("Nuevo Donante");
+            /* Le decimos a la ventana quién es la ventana original */
+            ventana.initOwner(stagePrincipal);
+            Scene scene = new Scene(donan);
+            ventana.setScene(scene);
+
+            ActualizarDonante controller2 = loader.getController();
             controller2.setStagePrincipal(ventana);
             controller2.setProgramaPrincipal(this);
 

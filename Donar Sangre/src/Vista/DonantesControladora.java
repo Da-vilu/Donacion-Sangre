@@ -40,8 +40,6 @@ public class DonantesControladora {
 	@FXML
 	private TextField txtBuscar;
 	
-	@FXML
-	private ScrollBar scrl_donantes;
 	
 	@FXML
 	private TableView<Donantes> TablaDonantes;
@@ -157,7 +155,7 @@ public class DonantesControladora {
 					datosseleccion = con.buscarDonante(txtBuscar.getText());
 					TablaDonantes.setItems(datosseleccion);
 					
-					if(txtBuscar.getText()=="") {
+					if(txtBuscar.getText().equals("")) {
 						datosseleccion = con.ConsultaDonantes();
 						TablaDonantes.setItems(datosseleccion);
 					}
@@ -170,6 +168,7 @@ public class DonantesControladora {
 					
 					datosseleccion = con.ConsultaDonantes();
 					TablaDonantes.setItems(datosseleccion);
+
 		
 			}
 	
@@ -185,7 +184,7 @@ public class DonantesControladora {
 						Alert alert = new Alert(AlertType.CONFIRMATION);
 						alert.setTitle("CONFIRMACION");
 						alert.setHeaderText("Por favor confirme el borrado");
-						alert.setContentText("¿Desea borrar la donación con código: "+ seleccionada.getNdonante() +" ?");
+						alert.setContentText("¿Desea borrar el Donante con código: "+ seleccionada.getNdonante() +" ?");
 
 						Optional<ButtonType> result = alert.showAndWait();
 						if (result.get() == ButtonType.OK){
@@ -210,18 +209,18 @@ public class DonantesControladora {
 			}
 	
 				
-				public void ActualizarDonante() {
-	
-	
-	
-			}
+				public void ActualizarDonante() throws SQLException {
+					
+					this.ProgramaPrincipal.pantallaActualizarDonante();
+					
+					datosseleccion = con.ConsultaDonantes();
+					TablaDonantes.setItems(datosseleccion);
 
-				
-				public void MostrarDonante() {
-	
-	
-	
-			}
+						}
+
+					
+
+			
 				
 				
 				public void Volver() {
@@ -231,10 +230,4 @@ public class DonantesControladora {
 					
 			}
 				
-				public void mover() {
-					
-					
-					
-			}
-
 }

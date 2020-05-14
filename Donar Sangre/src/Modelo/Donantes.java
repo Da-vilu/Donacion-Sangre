@@ -1,12 +1,14 @@
 package Modelo;
 
+import java.sql.Blob;
+
 public class Donantes {
 	
 		private String Ndonante; 
 		private String  Nombre; 
 		private String Apellido_1;  
 		private String Apellido_2; 
-		private String Foto; 
+		private Blob Foto; 
 		private String DNI_Pasaporte; 
 		private String Fecha_naci; 
 		private int TLF; 
@@ -22,7 +24,7 @@ public class Donantes {
 		private String Pais_naci;
 		private String Aptitud;
 		
-		public Donantes(String ndonante, String nombre, String apellido_1, String apellido_2, String foto,
+		public Donantes(String ndonante, String nombre, String apellido_1, String apellido_2, Blob foto,
 				String dNI_Pasaporte, String fecha_naci, int tLF, int tLF_mov, String email, String sexo,
 				String tipo_sanguineo, String direccion, String t_residencia, String poblacion, String provinvia,
 				String cP, String pais_naci, String aptitud) {
@@ -80,11 +82,11 @@ public class Donantes {
 			Apellido_2 = apellido_2;
 		}
 
-		public String getFoto() {
+		public Blob getFoto() {
 			return Foto;
 		}
 
-		public void setFoto(String foto) {
+		public void setFoto(Blob foto) {
 			Foto = foto;
 		}
 

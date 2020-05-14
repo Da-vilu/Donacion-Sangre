@@ -13,7 +13,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
-public class NuevoDonante {
+public class ActualizarDonante {
 	
 	@FXML
 	private TextField txtNdonante;
@@ -164,7 +164,7 @@ public class NuevoDonante {
 			alert.showAndWait();
 		}
 		else{
-			con.NuevoDonante(Ndonante, Nombre, Apellido1, Apellido2, foto, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud);	
+			con.UpdateDonante(Ndonante, Nombre, Apellido1, Apellido2, foto, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud);	
 		}
 	}	
 	
