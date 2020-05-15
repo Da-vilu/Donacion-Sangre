@@ -80,7 +80,7 @@ import javafx.scene.control.Alert.AlertType;
 			Statement stm = conexion.createStatement();
 
 			// Preparo la sentencia SQL CrearTablaPersonas
-			String insertsql = "INSERT INTO "+usr+".DONANTES VALUES (?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String insertsql = "INSERT INTO "+usr+".DONANTES VALUES (?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,'NO')";
 			
 			PreparedStatement pstmt = conexion.prepareStatement(insertsql);
 			pstmt.setString(1, ndonante);
@@ -100,7 +100,7 @@ import javafx.scene.control.Alert.AlertType;
 			pstmt.setString(15, provinvia);
 			pstmt.setString(16, cP);
 			pstmt.setString(17, pais_naci);
-			pstmt.setString(18, aptitud);
+		
 			
 			//ejecuto la sentencia
 			try{
@@ -137,7 +137,7 @@ import javafx.scene.control.Alert.AlertType;
 		public void UpdateDonante(String ndonante, String nombre, String apellido_1, String apellido_2, String foto,
 				String dNI_Pasaporte, String fecha_naci, String tLF, String movil, String email, String sexo,
 				String tipo_sanguineo, String direccion, String t_residencia, String poblacion, String provinvia,
-				String cP, String pais_naci, String aptitud) throws SQLException{
+				String cP, String pais_naci) throws SQLException{
 
 			//Preparo la conexion para ejecutar sentencias SQL de tipo update
 			Statement stm = conexion.createStatement();
@@ -145,7 +145,7 @@ import javafx.scene.control.Alert.AlertType;
 			// Preparo la sentencia SQL CrearTablaPersonas
 			String insertsql = "UPDATE "+usr+".DONANTES SET NOMBRE=?, APELLIDO_1=?, APELLIDO_2=?, DNI_pasaporte=?, FECHA_NACI=?, "
 					+ "TLF=?, TLF_mov=?, EMAIL=?,SEXO=?, TIPO_SANGUINEO=?, DIRECCION=?, T_residencia=?, "
-					+ "POBLACION=?, PROVINVIA=?, CP=?, Pais_naci=?, Aptitud=? WHERE ndonante=?";
+					+ "POBLACION=?, PROVINVIA=?, CP=?, Pais_naci=? WHERE ndonante=?";
 			
 			
 			PreparedStatement pstmt = conexion.prepareStatement(insertsql);
@@ -167,8 +167,7 @@ import javafx.scene.control.Alert.AlertType;
 			pstmt.setString(14, provinvia);
 			pstmt.setString(15, cP);
 			pstmt.setString(16, pais_naci);
-			pstmt.setString(17, aptitud);
-			pstmt.setString(18, ndonante);
+			pstmt.setString(17, ndonante);
 			
 			
 			//ejecuto la sentencia

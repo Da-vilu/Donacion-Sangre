@@ -75,16 +75,6 @@ public class ActualizarDonante {
 	
 	@FXML
 	private TextField txtPaisNatal;
-
-	
-	@FXML
-	RadioButton No;
-
-	@FXML
-	RadioButton Si;
-
-	@FXML
-	ToggleGroup aptitud;
 	
 	@FXML
 	private Button btnAceptar;
@@ -132,12 +122,6 @@ public class ActualizarDonante {
 		String sexo;
 		String Aptitud;
 		
-		if(Si.isSelected()) {
-			Aptitud = "S";
-		}else {
-			Aptitud = "N";
-		}
-		
 		
 		
 		if(hombre.isSelected()) {
@@ -164,7 +148,7 @@ public class ActualizarDonante {
 			alert.showAndWait();
 		}
 		else{
-			con.UpdateDonante(Ndonante, Nombre, Apellido1, Apellido2, foto, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud);	
+			con.UpdateDonante(Ndonante, Nombre, Apellido1, Apellido2, foto, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal);	
 		}
 	}	
 	

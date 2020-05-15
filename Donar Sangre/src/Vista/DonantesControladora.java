@@ -33,6 +33,9 @@ public class DonantesControladora {
 	private Button btnActualizarDonacion;
 	
 	@FXML
+	private Button btnActualizarventana;
+	
+	@FXML
 	private Button btnEliminarDonacion;
 	
 	@FXML
@@ -176,6 +179,34 @@ public class DonantesControladora {
 					datosseleccion = con.ConsultaDonantes();
 					TablaDonantes.setItems(datosseleccion);
 
+		
+			}
+				
+				public void ActualizarVentana() throws SQLException {
+		
+					datosseleccion = con.ConsultaDonantes();
+					TablaDonantes.setItems(datosseleccion);
+
+					
+					Ndonante.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Ndonante"));
+					Nombre.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Nombre"));
+					Apellido_1.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Apellido_1"));
+					Apellido_2.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Apellido_2"));
+					Foto.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Foto"));
+					DNI_Pasaporte.setCellValueFactory(new PropertyValueFactory<Donantes,String>("DNI_Pasaporte"));
+					Fecha_naci.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Fecha_naci"));
+					TLF.setCellValueFactory(new PropertyValueFactory<Donantes,String>("TLF"));
+					TLF_mov.setCellValueFactory(new PropertyValueFactory<Donantes,String>("TLF_mov"));
+					Email.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Email"));
+					Sexo.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Sexo"));
+					Tipo_sanguineo.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Tipo_sanguineo"));
+					Direccion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Direccion"));
+					T_residencia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("T_residencia"));
+					Poblacion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Poblacion"));
+					Provincia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Provinvia"));
+					CP.setCellValueFactory(new PropertyValueFactory<Donantes,String>("CP"));
+					Pais_nacimiento.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Pais_naci"));
+					Aptitud.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Aptitud"));
 		
 			}
 				

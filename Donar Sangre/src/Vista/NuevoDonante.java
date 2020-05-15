@@ -75,16 +75,6 @@ public class NuevoDonante {
 	
 	@FXML
 	private TextField txtPaisNatal;
-
-	
-	@FXML
-	RadioButton No;
-
-	@FXML
-	RadioButton Si;
-
-	@FXML
-	ToggleGroup aptitud;
 	
 	@FXML
 	private Button btnAceptar;
@@ -130,13 +120,8 @@ public class NuevoDonante {
 		String CP = txtCP.getText();
 		String PaisNatal = txtPaisNatal.getText();
 		String sexo;
-		String Aptitud;
+		String Aptitud = "NO";
 		
-		if(Si.isSelected()) {
-			Aptitud = "S";
-		}else {
-			Aptitud = "N";
-		}
 		
 		
 		
@@ -167,7 +152,7 @@ public class NuevoDonante {
 			con.NuevoDonante(Ndonante, Nombre, Apellido1, Apellido2, foto, DNI, Fnaci, TLF, movil, Email, sexo, Tsangre, Direccion, Tresidencia, Poblacion, Provincia, CP, PaisNatal, Aptitud);	
 		}
 	}	
-	
+
 	public void Borrar () {
 		
 		txtNdonante.setText("");

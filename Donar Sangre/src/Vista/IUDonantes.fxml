@@ -57,7 +57,8 @@
             <Button fx:id="btnActualizarDonacion" layoutX="654.0" layoutY="150.0" mnemonicParsing="false" onAction="#ActualizarDonante" text="Actualizar Donante" />
             <Button fx:id="btnEliminarDonacion" layoutX="653.0" layoutY="211.0" mnemonicParsing="false" onAction="#EliminarDonante" prefHeight="25.0" prefWidth="121.0" text="Eliminar Donante" />
             <Button fx:id="btnVolver" layoutX="586.0" layoutY="211.0" mnemonicParsing="false" onAction="#Volver" text="&lt;-" />
-            <Button fx:id="btnImprimir" layoutX="846.0" layoutY="150.0" mnemonicParsing="false" onAction="#imprime" text="Generar Carné" />
+            <Button fx:id="btnImprimir" layoutX="835.0" layoutY="112.0" mnemonicParsing="false" onAction="#imprime" text="Generar Carné" />
+            <Button fx:id="btnActualizarventana" layoutX="848.0" layoutY="150.0" mnemonicParsing="false" onAction="#ActualizarVentana" text="Actualizar" />
          </children>
       </AnchorPane>
    </children>
