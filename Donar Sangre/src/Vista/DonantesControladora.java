@@ -1,10 +1,14 @@
 package Vista;
 
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import com.itextpdf.text.DocumentException;
+
 import Modelo.BBDDdonantes;
 import Modelo.Donantes;
+import Modelo.ImprimeArchivo;
 import Controlador.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -39,6 +43,9 @@ public class DonantesControladora {
 	
 	@FXML
 	private TextField txtBuscar;
+	
+	@FXML
+	private Button btnImprimir;
 	
 	
 	@FXML
@@ -143,9 +150,9 @@ public class DonantesControladora {
 		Direccion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Direccion"));
 		T_residencia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("T_residencia"));
 		Poblacion.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Poblacion"));
-		Provincia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Provincia"));
+		Provincia.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Provinvia"));
 		CP.setCellValueFactory(new PropertyValueFactory<Donantes,String>("CP"));
-		Pais_nacimiento.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Pais_nacimiento"));
+		Pais_nacimiento.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Pais_naci"));
 		Aptitud.setCellValueFactory(new PropertyValueFactory<Donantes,String>("Aptitud"));
 	}
 			
@@ -171,6 +178,22 @@ public class DonantesControladora {
 
 		
 			}
+				
+				public void imprime() throws FileNotFoundException, DocumentException{
+					
+					
+					int index = TablaDonantes.getSelectionModel().getSelectedIndex();
+					if( index >= 0){
+
+						Donantes seleccionada = TablaDonantes.getSelectionModel().getSelectedItem();
+
+						
+						ImprimeArchivo carne = new ImprimeArchivo("Carné de "+ seleccionada.getNombre(),"C:\\Users\\Daniel Vinagre\\Desktop\\" );
+						carne.generarArchivoPDF(seleccionada.getNombre(), seleccionada.getNdonante(), seleccionada.getApellido_1(), seleccionada.getApellido_2(), seleccionada.getTipo_sanguineo());
+						
+					
+					}
+				}
 	
 				
 				public void EliminarDonante() throws SQLException {
